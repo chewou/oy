@@ -13,6 +13,7 @@ class DB{
 	public static function findAll($table){
 		return self::$db->findAll($table);
 	}
+	public static function findOne($table){}
 }
 
  ?>
