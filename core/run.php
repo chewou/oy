@@ -18,10 +18,10 @@ class run{
 		VIEW::init(self::$view);
 	}
 	private static function initControl(){
-		self::$control = isset($_GET['control'])?$_GET['control']:'index';
+		self::$control = isset($_GET['control'])?daddslashes($_GET['control']):'index';
 	}
 	private static function initMethod(){
-		self::$method = isset($_GET['method'])?$_GET['method']:'index';
+		self::$method = isset($_GET['method'])?daddslashes($_GET['method']):'index';
 	}
 
 	public static function start($db,$viewconf){
