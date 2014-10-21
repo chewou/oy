@@ -5,7 +5,7 @@ class mysql{
 
 	// 定义错误处理函数
 	public function error($error){
-		die("对不起，你的操作有误，错误原因是：".$error);
+		die("对不起,操作有误，错误原因是：".$error);
 		// echo $error;
 	}
 	// 数据库连接函数
@@ -17,7 +17,12 @@ class mysql{
 		
 	}
 	public function query($sql){
-		return mysql_query($sql);
+		if(!mysql_query($sql)){
+			$errMessage = $sql .'&nbsp;'. mysql_error();
+			$this->error($errMessage);
+		}else{
+			return mysql_query($sql);
+		}
 	}
 	public function findAll($table){
 		$sql = 'select * from '.$table;
