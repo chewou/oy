@@ -13,7 +13,9 @@ class DB{
 	public static function findAll($table){
 		return self::$db->findAll($table);
 	}
-	public static function findOne($table){}
+	public static function findOne($table){
+		return self::$db->findOne($table);
+	}
 }
 
  ?>
