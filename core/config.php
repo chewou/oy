@@ -5,17 +5,17 @@
 
 //数据库配置文件
 $db = array(
-		'dbhost' => 'localhost',
+		'dbhost' => '127.0.0.1',
 		'dbuser' => 'root',
 		'passwd' => '',
 		'charset' => 'utf8',
-		'dbname' => 'jianli',
+		'dbname' => 'test',
 		'dbtype' => 'mysql'
+
 	);
 
 // 视图配置文件
-$viewconf = array(
-		
+$viewconf = array(		
 		'left_delimiter'  => '{',  
 		'right_delimiter' => '}', 
 		'template_dir'    => 'libs/View', 
