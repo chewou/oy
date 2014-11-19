@@ -5,11 +5,9 @@ class pdodb{
 	/*
 	 *数据库连接
 	 */
-	public function connect($dsn,$user,$passwd,$charset){
+	public function connect($dsn,$user,$passwd){
 		try{			
-			self::$pdo = new PDO($dsn,$user,$passwd);
-			$sql = "set charset $charset";
-			self::$pdo->query($sql);						
+			self::$pdo = new PDO($dsn,$user,$passwd);						
 		}catch(PDOException $e){
 			echo 'failed!'.$e->getMessage();
 			exit;
@@ -34,7 +32,7 @@ class pdodb{
 			try{
 				$data = self::$pdo->prepare($sql);
 				$data->execute($arr);			
-				return self::$pdo->lastInsertId();				
+				return self::$pdo->lastInsertId();
 			}
 			catch(PDOException $e){
 				echo 'failed:'.$e->getMessage();

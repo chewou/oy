@@ -8,8 +8,7 @@ class indexControl{
 		$d = M('test');
 		$a = $d->test();	
 		$b = $d->test();
-		var_dump($a);
-		var_dump($b);	
+			
 		VIEW::display('welcome.php',$data);		
 	}
 	public function test(){

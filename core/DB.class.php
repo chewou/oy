@@ -9,15 +9,7 @@ class DB{
 	public static function init($config){
 		$dsn = $config['dbtype'].':dbname='.$config['dbname'].';host='.$config['dbhost'];	
 		self::$db = new pdodb();		
-		self::$db->connect($dsn,$config['dbuser'],$config['passwd']);		
-		// $db->insert('stu',array('sname'=>'ouyang','sex'=>1,'qq'=>11134617));
-		// $data = self::$db->select('test');			
-		// var_dump($data);
-		// $a = self::$db->query('select * from pdo where id = 46');
-		// foreach ($a as $value) {
-		// 	var_dump($value);
-		// }
-		// var_dump($data);
+		self::$db->connect($dsn,$config['dbuser'],$config['passwd'],$config['charset']);			
 	} 
 
 	public static function findAll($table){
